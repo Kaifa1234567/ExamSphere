@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Examora | Smart Assessment Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="#"><span class="logo-icon">E</span> examora<span class="dot">.</span></a>
+  <nav><a href="#features">Features</a><a href="#how">How it works</a><a href="#about">About</a></nav>
+  <div class="header-actions"><button class="theme" id="themeBtn" aria-label="Toggle theme">◐</button><a class="nav-login" href="#portal">Student portal ↗</a></div>
+</header>
+<main>
+<section class="hero">
+ <div class="hero-copy"><span class="pill"><i></i> SMART ONLINE ASSESSMENT</span>
+ <h1>Your knowledge.<br><em>Your moment.</em></h1>
+ <p class="lead">A focused space to practise, take assessments and track your learning progress — all in one place.</p>
+ <div class="hero-buttons"><a class="btn primary" href="#portal">Start an exam <b>→</b></a><a class="btn light" href="#features">Explore features</a></div>
+ <div class="trust"><div class="avatars"><span>A</span><span>S</span><span>M</span></div><p><b>Learn at your pace</b><small>Simple · Clear · Student-friendly</small></p></div>
+ </div>
+ <div class="hero-visual" aria-label="Illustration of an exam dashboard">
+  <div class="float-tag tag-top">✦ &nbsp; Keep growing</div>
+  <div class="dash-card">
+   <div class="dash-head"><span>MY OVERVIEW</span><span class="online">● LIVE</span></div>
+   <h3>Ready to learn?</h3><p class="sub">Your next step starts here.</p>
+   <div class="mini-stats"><div><small>Practice tests</small><b>12</b></div><div><small>Subjects</small><b>03</b></div></div>
+   <div class="chart-title">Weekly activity <span>THIS WEEK</span></div>
+   <div class="bars"><i style="height:35%"></i><i style="height:60%"></i><i style="height:45%"></i><i style="height:83%"></i><i style="height:55%"></i><i style="height:95%"></i><i style="height:70%"></i></div>
+   <div class="dash-foot"><span>Mon&nbsp;&nbsp; Tue&nbsp;&nbsp; Wed&nbsp;&nbsp; Thu&nbsp;&nbsp; Fri&nbsp;&nbsp; Sat&nbsp;&nbsp; Sun</span><b>↗ Keep it up!</b></div>
+  </div>
+  <div class="float-tag tag-bottom"><span>✓</span><div><b>You're making progress</b><small>One question at a time</small></div></div>
+  <div class="decor decor-one"></div><div class="decor decor-two"></div>
+ </div>
+</section>
+<section class="feature-strip" id="features">
+ <div class="strip-heading"><span>BUILT FOR BETTER LEARNING</span><h2>Everything you need to<br>take your next step.</h2></div>
+ <div class="feature-grid">
+  <article><span class="feature-icon violet">⌘</span><h3>Subject-based tests</h3><p>Choose from different subjects and practise with focused MCQ assessments.</p></article>
+  <article><span class="feature-icon orange">◷</span><h3>Timed examinations</h3><p>Stay on track with a clear countdown timer and question progress indicator.</p></article>
+  <article><span class="feature-icon green">▥</span><h3>Instant results</h3><p>See your marks, percentage and answer review as soon as you finish.</p></article>
+ </div>
+</section>
+<section class="portal-section" id="portal">
+ <div class="portal-intro"><span class="eyebrow">STUDENT WORKSPACE</span><h2>Make every attempt<br><em>count.</em></h2><p>Enter your details, select a subject and get started. Your demo exam runs right here in your browser.</p>
+ <div class="portal-points"><span>✓ No complicated setup</span><span>✓ Clear exam instructions</span><span>✓ Review your answers</span></div></div>
+ <div class="portal-card">
+  <div id="registerView">
+   <div class="card-top"><span class="card-icon">✎</span><span class="secure">● DEMO PORTAL</span></div>
+   <h2>Welcome, student!</h2><p class="muted">Fill in the details to enter your exam.</p>
+   <form id="studentForm">
+    <label for="name">Your full name</label><input id="name" required maxlength="60" placeholder="Enter your name">
+    <label for="email">Email <small>(optional)</small></label><input id="email" type="email" placeholder="name@example.com">
+    <label for="subject">Select a subject</label><select id="subject"><option>Computer Science</option><option>General Knowledge</option><option>English</option></select>
+    <div class="exam-meta"><div><small>Questions</small><b>10</b></div><div><small>Time limit</small><b>10 min</b></div><div><small>Total marks</small><b>10</b></div></div>
+    <button class="btn primary wide" type="submit">Continue <b>→</b></button>
+   </form>
+  </div>
+  <div id="instructionView" class="hide">
+   <span class="eyebrow">JUST BEFORE YOU START</span><h2>Exam guidelines</h2><p class="muted">A few things to remember.</p>
+   <ul class="guidelines"><li>There are 10 multiple-choice questions.</li><li>Each correct answer earns 1 mark.</li><li>You have 10 minutes to finish.</li><li>You may change answers before submitting.</li><li>Unanswered questions receive zero marks.</li></ul>
+   <div class="warning">Keep this tab open during your exam. This is a learning demo, not a secure proctored examination.</div>
+   <div class="row-actions"><button class="btn light" id="editDetails">← Edit details</button><button class="btn primary" id="startBtn">Start exam →</button></div>
+  </div>
+  <div id="examView" class="hide">
+   <div class="exam-header"><div><span class="eyebrow" id="subjectLabel">COMPUTER SCIENCE</span><h2>Assessment</h2></div><div class="timer" id="timer">10:00</div></div>
+   <div class="progress-info"><span id="questionCount">Question 1 of 10</span><span id="answered">0 answered</span></div><div class="progress"><i id="progressBar"></i></div>
+   <div class="question-box"><span class="eyebrow" id="qNumber">QUESTION 01</span><h3 id="question"></h3><div id="choices" class="choices"></div></div>
+   <div class="exam-actions"><button class="btn light" id="prev">← Previous</button><div><button class="btn light" id="next">Next →</button><button class="btn primary" id="submit">Finish exam</button></div></div>
+  </div>
+  <div id="resultView" class="hide">
+   <div class="result-symbol">✓</div><span class="eyebrow">ASSESSMENT COMPLETE</span><h2 id="resultHeading">Well done!</h2><p class="muted" id="resultMessage"></p>
+   <div class="result-box"><div class="score-circle" id="scoreCircle"><div><b id="percent">0%</b><small>SCORE</small></div></div><div class="result-numbers"><p>Correct answers <b id="correct">0 / 10</b></p><p>Marks obtained <b id="marks">0 / 10</b></p><p>Time used <b id="used">00:00</b></p></div></div>
+   <div class="row-actions"><button class="btn primary" id="review">Review answers</button><button class="btn light" id="again">New attempt</button></div><div id="reviewList" class="review hide"></div>
+   <p class="fine-print">Demo results are not stored on a server and may be lost when you close or refresh the page.</p>
+  </div>
+ </div>
+</section>
+<section class="how" id="how"><span class="eyebrow">A SIMPLE PROCESS</span><h2>Three steps to get started.</h2><div class="how-grid"><div><b>01</b><h3>Enter your details</h3><p>Tell us your name and choose a subject.</p></div><div><b>02</b><h3>Take the assessment</h3><p>Read each question and select your answer.</p></div><div><b>03</b><h3>See your progress</h3><p>Get your score and review the correct answers.</p></div></div></section>
+</main>
+<footer id="about"><a class="logo" href="#"><span class="logo-icon">E</span> examora<span class="dot">.</span></a><p>A student-friendly online assessment demo.</p><small>© 2026 Examora. Built for learning.</small></footer>
+<script src="script.js"></script>
+</body></html>
